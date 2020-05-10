@@ -1,0 +1,28 @@
+.budget-card {
+    max-width: 350px;
+    min-width: 350px;
+    margin: 5px;
+    float: left;
+  }
+
+  .mat-card-content, .mat-card-subtitle {
+    font-size: 23px;
+}
+  
+.budget-image {
+    background-image: url(src/assets/img/money.png);
+    background-size: cover; 
+  }
+
+  mat-grid-tile {
+    background: lightblue;
+  }
+
+  .negative {
+    color: red;
+  }
+  
+  .positive {
+    color: green;
+  }
+

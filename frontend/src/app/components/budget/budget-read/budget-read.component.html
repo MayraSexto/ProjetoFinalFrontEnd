@@ -1,0 +1,52 @@
+<div *ngIf="budget && items">
+<mat-card class="budget-card">
+    <mat-card-header>
+      <div mat-card-avatar class="budget-image"></div>
+      <mat-card-title>Budget - {{ budget.description }}</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+      </p>
+      <p>
+        Valor Total: {{ budget.budgetValue | currency : 'EUR'}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="updateBudget()">EDIT</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class="budget-card">
+  <mat-card-header>
+    <div mat-card-avatar class="budget-image"></div>
+    <mat-card-title>Items</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+    </p>
+    <p>
+      Quantidade: {{ items.length }}
+    </p>
+    <p>
+      Valor Total: {{ getTotalCost() | currency : 'EUR'}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="budget-card">
+  <mat-card-header c>
+    <div mat-card-avatar class="budget-image"></div>
+    <mat-card-title>Saldo</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+    </p>
+    <p  [ngClass]="{'negative': budget.budgetValue < getTotalCost(), 'positive' : budget.budgetValue > getTotalCost()}" >
+      Valor Total: {{ budget.budgetValue - getTotalCost() | currency : 'EUR'}}
+    </p>
+  </mat-card-content>
+</mat-card>
+</div>
+
+

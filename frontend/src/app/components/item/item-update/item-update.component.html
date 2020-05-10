@@ -1,0 +1,21 @@
+<mat-card *ngIf="item">
+    <mat-card-title>Alterar Item!</mat-card-title>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput required placeholder="Nome" formControlName="name" [(ngModel)]="item.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required type="number" placeholder="Quantidade" formControlName="quantity" [(ngModel)]="item.quantity" name="quantity">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required type="number" placeholder="Preço(€)" formControlName="price" [(ngModel)]="item.price" name="price">
+        </mat-form-field>
+
+    </form>
+    <button [disabled]="!form.valid" mat-raised-button (click)="updateItem()" color="primary">
+        Atualizar
+    </button>
+    <button mat-raised-button (click)="cancel()" color="warn">
+        Cancelar
+    </button>
+</mat-card>

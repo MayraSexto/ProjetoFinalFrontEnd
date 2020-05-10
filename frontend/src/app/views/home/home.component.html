@@ -1,0 +1,20 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+        Bem Vindo!!
+    </mat-card-title>
+
+    <mat-card-subtitle class="subtitle">
+        Simplifique e organize de forma rápida sua Wishlist.
+    </mat-card-subtitle>
+
+  
+        <img class="logo" src="assets/img/log.png" alt="logo">
+    
+
+    <mat-card-subtitle *ngIf="budget">
+        <button class="button" mat-raised-button (click)="navigateToBudget()" color="primary">
+            {{ getButtonLabel() }}
+        </button>
+    </mat-card-subtitle>
+</mat-card>
+

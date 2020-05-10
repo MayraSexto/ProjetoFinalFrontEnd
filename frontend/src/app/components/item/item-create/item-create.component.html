@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Novo Item!</mat-card-title>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput required placeholder="Nome" formControlName="name" [errorStateMatcher]="matcher" [(ngModel)]="item.name"  name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" required placeholder="Quantidade"  formControlName="quantity" [(ngModel)]="item.quantity" name="quantity">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" required placeholder="Preço(€)"  formControlName="price" [(ngModel)]="item.price" name="price">
+        </mat-form-field>
+    </form>
+    <button [disabled]="!form.valid" mat-raised-button (click)="createItem()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

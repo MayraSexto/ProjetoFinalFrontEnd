@@ -1,0 +1,19 @@
+<mat-card *ngIf="budget">
+    <mat-card-title>Update Budget</mat-card-title>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput required type="text" placeholder="Descrição" formControlName="description" [(ngModel)]="budget.description" name="description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required type="number" placeholder="Valor(€)" formControlName="budgetValue" [(ngModel)]="budget.budgetValue" name="budgetValue">
+        </mat-form-field>
+
+
+    </form>
+    <button [disabled]="!form.valid" mat-raised-button (click)="updateBudget()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

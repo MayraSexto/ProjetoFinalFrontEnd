@@ -1,0 +1,28 @@
+.home .title{
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.mat-card {
+    min-width: 500px;
+}
+
+.home .subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+}
+.logo{
+    max-width: 800px;
+    max-height: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

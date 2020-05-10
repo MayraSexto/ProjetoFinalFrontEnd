@@ -1,0 +1,21 @@
+<mat-card *ngIf="item">
+    <mat-card-title>Excluir Item</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="item.name" name="name" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço(€)" [(ngModel)]="item.price" name="price" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Quantidade(€)" [(ngModel)]="item.quantity" name="quantity" disabled>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="deleteItem()" color="warn">
+        Excluir
+    </button>
+    <button mat-raised-button (click)="cancel()" color="primary">
+        Cancelar
+    </button>
+</mat-card>
